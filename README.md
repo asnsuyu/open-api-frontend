@@ -35,11 +35,11 @@
 
 接口在线调用
 
-![](./doc/demo_interface_info_page.png)
+![](./doc/demo_interface_info_page_v02.png)
 
 接口管理（仅限管理员）
 
-![](./doc/demo_interface_manage_page.png)
+![](./doc/demo_interface_manage_page_v02.png)
 
 接口分析（仅限管理员）
 
