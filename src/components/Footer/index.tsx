@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               <span>Github</span>
             </>
           ),
-          href: 'https://asnpro.icu',
+          href: 'https://github.com/asnsuyu/open-api-frontend',
           blankTarget: true,
         },
       ]}
