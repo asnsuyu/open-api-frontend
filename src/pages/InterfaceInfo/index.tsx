@@ -85,7 +85,7 @@ const Index: React.FC = () => {
             <Descriptions.Item label="接口状态">
               <Badge
                 status={data.status ? 'processing' : 'warning'}
-                text={data.status ? '运行中' : '维护中'}
+                text={data.status ? '开启' : '关闭'}
               />
             </Descriptions.Item>
             <Descriptions.Item label="描述">{data.description}</Descriptions.Item>

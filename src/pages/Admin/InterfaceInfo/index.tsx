@@ -184,26 +184,30 @@ const TableList: React.FC = () => {
       title: '请求方法',
       dataIndex: 'method',
       valueType: 'text',
+      hideInForm: true,
     },
     {
-      title: 'url',
+      title: '请求地址',
       dataIndex: 'url',
       valueType: 'text',
     },
     {
       title: '请求参数',
       dataIndex: 'requestParams',
-      valueType: 'text',
+      valueType: 'jsonCode',
+      hideInTable: true,
     },
     {
       title: '请求头',
       dataIndex: 'requestHeader',
-      valueType: 'text',
+      valueType: 'jsonCode',
+      hideInTable: true,
     },
     {
       title: '响应头',
       dataIndex: 'responseHeader',
-      valueType: 'text',
+      valueType: 'jsonCode',
+      hideInTable: true,
     },
     {
       title: '状态',
@@ -212,7 +216,7 @@ const TableList: React.FC = () => {
       valueEnum: {
         0: {
           text: '关闭',
-          status: 'Default',
+          status: 'Warning',
         },
         1: {
           text: '开启',
@@ -226,6 +230,13 @@ const TableList: React.FC = () => {
       valueType: 'option',
       render: (_, record) => [
         record.status === 0 && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              width: '100%',
+            }}
+          >
             <a
               key="config"
               onClick={() => {
@@ -234,8 +245,36 @@ const TableList: React.FC = () => {
             >
               发布
             </a>
+            <a
+              key="config"
+              onClick={() => {
+                handleUpdateModalVisible(true);
+                setCurrentRow(record);
+              }}
+            >
+              修改
+            </a>
+            <a
+              style={{
+                color: 'red',
+              }}
+              key="config"
+              onClick={() => {
+                handleRemove(record);
+              }}
+            >
+              删除
+            </a>
+          </div>
         ),
         record.status === 1 && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              width: '100%',
+            }}
+          >
             <a
               key="config"
               onClick={() => {
@@ -244,29 +283,28 @@ const TableList: React.FC = () => {
             >
               下线
             </a>
+            <a
+              key="config"
+              onClick={() => {
+                handleUpdateModalVisible(true);
+                setCurrentRow(record);
+              }}
+            >
+              修改
+            </a>
+            <a
+              style={{
+                color: 'red',
+              }}
+              key="config"
+              onClick={() => {
+                handleRemove(record);
+              }}
+            >
+              删除
+            </a>
+          </div>
         ),
-        <>
-          <a
-            key="config"
-            onClick={() => {
-              handleUpdateModalVisible(true);
-              setCurrentRow(record);
-            }}
-          >
-            修改
-          </a>
-          <a
-            style={{
-              color: "red",
-            }}
-            key="config"
-            onClick={() => {
-              handleRemove(record);
-            }}
-          >
-            删除
-          </a>
-        </>,
       ],
     },
   ];
