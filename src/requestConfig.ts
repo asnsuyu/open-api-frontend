@@ -15,8 +15,7 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const requestConfig: RequestConfig = {
-
-  baseURL: process.env.NODE_ENV === 'production' ? '线上地址' : 'http://localhost:7529',
+  baseURL: process.env.NODE_ENV === 'production' ? 'https://open-api-120815-6-1329229128.sh.run.tcloudbase.com' : 'http://localhost:7529',
   withCredentials: true,
 
   // 请求拦截器
